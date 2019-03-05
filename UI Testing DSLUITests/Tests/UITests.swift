@@ -29,13 +29,17 @@ class UITests: XCTestCase {
     
     func testWithSyntaxCoolAsHell() {
         FirstScreen.screen {
-            $0.titleLabel { $0.hasText("Hello Cocoaheads!") }
-            $0.subtitleLabel { $0.hasText("How u doin?") }
-            $0.proceedButton { $0.tap() }
+            $0.titleLabel
+                .hasText("Hello Cocoaheads!")
+                .containsText("Hello")
+            
+            $0.subtitleLabel.containsText("How")
+            
+            $0.proceedButton.tap()
         }
         
         SecondScreen.screen {
-            $0.titleLabel { $0.hasText("Aaand we're on the second screen") }
+            $0.titleLabel.hasText("Aaand we're on the second screen")
         }
     }
     

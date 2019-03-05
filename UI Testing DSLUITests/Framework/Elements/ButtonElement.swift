@@ -2,8 +2,10 @@ import XCTest
 
 class ButtonElement: UIElement {
     
-    func tap() {
+    @discardableResult
+    func tap() -> ButtonElement {
         element.tap()
+        return self
     }
     
 }
